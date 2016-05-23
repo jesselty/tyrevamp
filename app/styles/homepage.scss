@@ -1,0 +1,531 @@
+$ty-blue: rgb(116, 185, 227);
+
+/* bootstrap mixins */
+
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
+
+/* bootstrap mixins */
+
+
+/*Grid layout for rooms section*/
+
+._hp {
+    .room-8,
+    .room-4 {
+        @extend .col-xs-12 !optional;
+    }
+    // column spanning 5 blocks/12
+    .room-8 {
+        width: 58.3333333333%;
+    }
+    // column spanning 2 cells/12
+    .room-4 {
+        width: 41.6666666667%;
+        .info-blk {
+            height: 470px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    ._hp {
+        .room-8 {
+            width: 72.222223%;
+        }
+        .room-4 {
+            width: 27.777777%;
+            .info-blk {
+                height: 230px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    ._hp {
+        .room-8 {
+            width: 69.604%;
+        }
+        .room-4 {
+            width: 30.396%;
+        }
+    }
+}
+
+
+/*Vertical height classes for grid blocks*/
+
+._hp .v-xs-blk {
+    .info-blk {
+        height: 100px;
+    }
+}
+
+._hp .v-sm-blk {
+    .info-blk {
+        height: 150px;
+    }
+}
+
+._hp .v-md-blk {
+    .info-blk {
+        height: 230px;
+    }
+}
+
+._hp .v-lg-blk {
+    .info-blk {
+        height: 390px;
+    }
+}
+
+
+/*xs block styling*/
+
+._hp .h-xs-blk {
+    .ty-columns {
+        @extend .col-xs-3 !optional;
+        @extend .col-sm-6 !optional;
+        @extend .col-md-3 !optional;
+        padding: 5px 5px;
+    }
+}
+
+
+/*Info Block styling*/
+
+._hp .info-blk {
+    position: relative;
+    color: white;
+    border: 1px solid rgb(230, 230, 230);
+    overflow: hidden;
+    &.big-blk {
+        .llu-smooth-img-load {
+            width: auto;
+            min-width: initial;
+            height: 100%;
+            background-size: auto 100%;
+        }
+    }
+    .llu-smooth-img-load {
+        height: auto;
+        background: transparent none no-repeat center center;
+        background-size: cover;
+        margin-left: -1px;
+    }
+    .ty-info-body {
+        a {
+            display: inline-block;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    ._hp .info-blk {
+        &.big-blk {
+            .llu-smooth-img-load {
+                width: calc(100% + 5px);
+                background-size: 100% 100%;
+            }
+        }
+    }
+    img.llu-smooth-img-load {
+        min-width: calc(100% + 5px);
+        height: 100%;
+    }
+}
+
+
+/*SECTION ICON*/
+
+._hp .section-heading {
+    padding: 0 0;
+    margin-bottom: -4px;
+    color: $ty-blue;
+    font-size: 23px;
+}
+
+._hp .section-icon {
+    display: inline-block;
+    width: 74px;
+    height: 74px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    background: url('/images/bus.png');
+}
+
+
+/*SECTION*/
+
+._hp {
+    section.page-blk:nth-of-type(odd) {
+        background-color: rgba(240, 240, 240, 0.2);
+    }
+}
+
+._hp .ticket-blk {
+    color: white;
+    margin-top: 38px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+._hp .ticket-blk-wrapper {
+    background-color: rgb(5, 89, 135);
+}
+
+._hp {
+    .search-blk {
+        display: none;
+        height: 438px;
+        padding: 30px 70px;
+        background-color: rgb(0, 49, 92);
+        h2 {
+            text-align: center;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 35px;
+        }
+        .ty-icon {
+            width: 40px;
+            font-size: 25px;
+        }
+        .ty-input-addon {
+            width: 100%
+        }
+        .ty-input {
+            color: black;
+            width: inherit;
+            height: 40px;
+            padding-left: 45px;
+        }
+        .ty-guest-inp,
+        .ty-room-inp {
+            .ty-input {
+                padding-left: 10px;
+            }
+        }
+        .ty-button {
+            width: 100%;
+            height: 45px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .label-blk {
+            white-space: nowrap;
+            font-size: 14px;
+            line-height: 25px;
+        }
+    }
+    #bus-form {
+        display: block;
+    }
+    #room-form {
+        .ty-return-trip {
+            display: block;
+        }
+    }
+}
+
+._hp .subscribe-blk {
+    position: relative;
+    padding: 30px 30px;
+}
+
+@media only screen and (min-width: 992px) {
+    ._hp .search-blk {
+        height: 371px;
+    }
+    ._hp {
+        .ty-one-way,
+        .ty-guest-inp {
+            padding-right: 5px;
+        }
+    }
+    ._hp {
+        .ty-return-trip,
+        .ty-room-inp {
+            padding-left: 5px;
+        }
+    }
+}
+
+._hp .datepicker-blk {
+    .ty-input {
+        padding-right: 70px;
+    }
+    .ty-icon.right {
+        color: rgb(140, 140, 140);
+        width: 70px;
+        font-size: 12px;
+        background-color: rgb(225, 225, 225);
+        &:before {
+            content: "Next day >";
+        }
+    }
+}
+
+._hp .subscribe-blk {
+    .ty-form {
+        color: #1B94D6;
+        font-size: 12px;
+    }
+    .ty-input-group {
+        margin-top: 5px;
+    }
+    .ty-input {
+        border: 1px solid #317DA7;
+        width: inherit;
+        height: 40px;
+        padding-left: 5px;
+        padding-right: 80px;
+        background: transparent;
+    }
+    .ty-icon.right {
+        width: 80px;
+        color: white;
+        background-color: rgb(25, 124, 179);
+        border: 1px solid #317DA7;
+        &:before {
+            content: "SUBSCRIBE";
+        }
+    }
+    .ty-input-addon {
+        width: 100%
+    }
+}
+
+
+/*SECTION*/
+
+._hp .ads-blk {
+    margin-top: 45px;
+    .info-blk {
+        height: 330px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    ._hp .ads-blk {
+        margin-top: 90px;
+    }
+}
+
+
+/*SECTION*/
+
+._hp {
+    .form-blk {
+        min-height: calc(100vh - 200px);
+    }
+    .page-blk {
+        padding-top: 50px;
+        padding-bottom: 100px;
+        .container {
+            & > .row {
+                position: relative;
+            }
+        }
+        .ty-scrollto-top {
+            position: absolute;
+            bottom: -50px;
+            right: 10px;
+        }
+    }
+    .info-blk-icons {
+        color: black;
+        border: none;
+        text-align: center;
+        padding: 30px 0;
+        white-space: nowrap;
+        .ty-icon-sprites,
+        .ty-icon {
+            width: 50px;
+            height: 52px;
+        }
+        .ty-icon {
+            color: black;
+            font-size: 35px;
+            &:before {
+                position: relative;
+                top: 10px;
+            }
+            &.icon-tv {
+                &:before {
+                    top: 6px;
+                }
+            }
+        }
+        .ty-icon-sprites,
+        .icons-txt {
+            font-size: 14px;
+            vertical-align: middle;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    ._hp .spl-blk {
+        .col-md-5 {
+            width: 38%;
+        }
+        .col-md-2 {
+            width: 24%;
+        }
+    }
+}
+
+
+/* Icons Block Styling */
+
+._hp {
+    .bus-icons-blk {
+        @at-root .room-icons-blk,
+        .icons-types-blk,
+        .icons-amen-blk {
+            position: relative;
+            margin-top: 25px;
+            &:before {
+                content: " ";
+                position: absolute;
+                top: 8px;
+                left: 2px;
+                right: 2px;
+                margin: auto;
+                width: calc(100% - 10px);
+                border-bottom: 1px solid #999;
+                @include scale(0.985,
+                1);
+            }
+            &:after {
+                position: absolute;
+                top: 0;
+                margin: auto;
+                left: 0;
+                right: 0;
+                text-align: center;
+                color: #999;
+                background-color: white;
+                font-size: 18px;
+            }
+        }
+        .icons-types-blk {
+            &:after {
+                width: 100px;
+                content: "Bus Types";
+            }
+        }
+        .icons-amen-blk {
+            &:before {
+                right: 0;
+            }
+            &:after {
+                width: 135px;
+                content: "Bus Amenitites";
+            }
+        }
+    }
+    .room-icons-blk {
+        &:before {
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
+        &:after {
+            width: 175px;
+            content: "Common Facilities";
+            background-color: #FCFCFC;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    ._hp {
+        .bus-icons-blk {
+            .icons-types-blk,
+            .icons-amen-blk {
+                &:before {
+                    width: calc(100% - 10px);
+                }
+            }
+            .icons-types-blk {
+                &:before {
+                    right: initial;
+                }
+                padding-right: 30px;
+            }
+            .icons-amen-blk {
+                &:before {
+                    left: initial;
+                }
+                padding-left: 30px;
+            }
+        }
+    }
+}
+
+
+/* Autocomplete styling */
+
+._hp {
+    .atc-city-matched {
+        width: calc(100% - 40px);
+        margin-left: 40px;
+    }
+}
+
+
+/* Carousel Styling */
+
+._hp {
+    .subscribe-blk {
+        .unslider {
+            width: 315px;
+            margin: 0 auto;
+        }
+    }
+    .image-carousel-blk {
+        border: 1px solid white;
+        margin-bottom: 15px;
+        &,
+        img {
+            width: 100%;
+            height: 205px;
+        }
+        & ~ .unslider-nav {
+            position: relative;
+            bottom: 10px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    ._hp {
+        .subscribe-blk {
+            .unslider {
+                width: auto;
+            }
+        }
+        .image-carousel-blk {
+            &,
+            img {
+                height: 165px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    ._hp {
+        .image-carousel-blk {
+            &,
+            img {
+                height: 219px;
+            }
+        }
+    }
+}

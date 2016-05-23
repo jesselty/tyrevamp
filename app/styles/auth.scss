@@ -1,0 +1,307 @@
+/* bootstrap mixins */
+
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
+
+/* bootstrap mixins */
+
+$sprite-1:url('http://www.travelyaari.com/img/packages/sprite-footer-1.png');
+$border-1:1px solid #e2e2e2;
+$background-gray: #F2F2F2;
+$ul-padding-left:0;
+$text-shadow-color:#302929;
+$ty-unavailable:#D2CFCF;
+$ty-transparent-bg:rgba(0,
+0,
+0,
+0.9);
+$ty-color: #f04e37;
+$ty-color-dark: #dc3f29;
+$floating-icons-border-color:#5F4C4C;
+.user-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    .user-popup-block {
+        border-radius: 3px;
+    }
+}
+
+.user-social {
+    @include box-shadow(inset 0 1px 1px 0 white);
+    position: relative;
+    cursor: pointer;
+    height: 30px;
+    background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .05) 49%, rgba(0, 0, 0, .05) 51%, rgba(0, 0, 0, .1));
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #777;
+    padding: 4px 10px;
+    font-size: 14px;
+    &:active {
+        background-image: linear-gradient(rgba(0, 0, 0, .05) 51%, rgba(0, 0, 0, .1), rgba(255, 255, 255, .1), rgba(255, 255, 255, .05) 49%);
+    }
+    &:before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 35px;
+        width: 1px;
+        height: inherit;
+        @include box-shadow(inset 0 1px 1px 0 white);
+    }
+    &.fb {
+        background-color: #4863ae;
+    }
+    &.gmail {
+        background-color: #4e6cf7;
+        .social-icon {
+            padding: 2px 3px 2px 2px;
+        }
+    }
+    .social-icon {
+        font-size: 18px;
+        padding: 2px 5px;
+        vertical-align: middle;
+    }
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 8px;
+    }
+}
+
+.inner-popup {
+    position: relative;
+    .close {
+        position: absolute;
+        top: -20px;
+        right: -30px;
+        font-size: 25px;
+        color: #555;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        font-family: sans-serif;
+        border: $border-1;
+    }
+}
+
+.auth-wrapper {
+    padding: 10px 0 10px;
+    height: 100%;
+    .forgot-pswd-block {
+        padding: 0 0;
+    }
+    .auth-form {
+        .auth-input-block,
+        .auth-alignright-block {
+            display: table;
+            width: 100%;
+            padding: 8px 0;
+        }
+        .auth-input-block {
+            .auth-user-label,
+            .auth-user-input {
+                display: table-cell;
+            }
+            .auth-user-label {
+                width: 80px;
+            }
+            .auth-user-input {
+                width: 100%;
+            }
+        }
+        .auth-alignright-block {
+            &:before {
+                display: table-cell;
+            }
+            .auth-alignright {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.auth-forgot-password {
+    color: #555;
+    font-size: 12px;
+    cursor: pointer;
+    vertical-align: top;
+    &:hover {
+        color: #005580;
+        text-decoration: underline;
+    }
+}
+
+button.auth-user-button,
+input.auth-user-input {
+    border: 1px solid $ty-color;
+    border-radius: 3px;
+    height: 33px;
+    outline: 0;
+}
+
+input.auth-user-input {
+    padding: 0 5px;
+}
+
+input.auth-user-input:focus {
+    box-shadow: 0 0 8px $ty-color;
+}
+
+button.auth-user-button {
+    background-color: $ty-color;
+    color: white;
+    cursor: pointer;
+}
+
+button.auth-user-button:active {
+    background-color: $ty-color-dark;
+}
+
+.signin-form {
+    position: relative;
+    width: 100%;
+    height: inherit;
+    display: inline-block;
+    vertical-align: middle;
+    border-bottom: 1px solid #BBBABA;
+    margin-bottom: 15px;
+    &:before {
+        content: "OR";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -15px;
+        margin: auto;
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        padding: 4px 0;
+        color: #555;
+        font-size: 14px;
+        text-align: center;
+    }
+    .auth-input-block {
+        @include clearfix();
+        display: table;
+    }
+    button.auth-user-button {
+        font-size: 15px;
+    }
+    .auth-forgot-password {
+        padding: 0 0;
+    }
+}
+
+.social-logins {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+@media only screen and (min-width: 620px) {
+    .user-popup-wrapper {
+        .popup-content {
+            max-height: 262px;
+        }
+    }
+    .auth-wrapper {
+        .auth-form {
+            .auth-alignright-block {
+                &:before {
+                    content: " ";
+                    width: 80px;
+                }
+            }
+        }
+    }
+    .signin-form {
+        width: 59.5%;
+        border-bottom: none;
+        border-right: 1px solid #BBBABA;
+        padding-right: 45px;
+        margin-bottom: initial;
+        &:before {
+            right: -13px;
+            top: 0;
+            bottom: 0;
+            left: auto;
+        }
+    }
+    .social-logins {
+        padding-left: 25px;
+        width: 39.285%;
+    }
+}
+
+.forgot-password-blk {
+    display: none;
+}
+
+.popup-content {
+    border-radius: 3px;
+}
+
+.user-popup-wrapper {
+    width: inherit;
+    height: inherit;
+    .popup-content {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        max-width: 620px;
+        background-color: white;
+        border: 1px solid gray;
+        padding: 20px 30px;
+        &.is-signin {
+            .if-register,
+            .if-password {
+                display: none;
+            }
+            .if-signin {
+                display: block;
+            }
+        }
+        &.is-register {
+            .if-signin,
+            .if-password {
+                display: none;
+            }
+            .if-register {
+                display: block;
+            }
+            #forgot-password-link {
+                display: none;
+            }
+        }
+        &.is-password {
+            .if-signin,
+            .if-password {
+                display: none;
+            }
+            .if-password {
+                display: block;
+            }
+        }
+        .auth-wrapper {
+            .auth-form {
+                .auth-input-block,
+                .auth-alignright-block {
+                    &.if-signin {
+                        display: table;
+                    }
+                }
+            }
+        }
+    }
+}

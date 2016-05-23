@@ -1,0 +1,116 @@
+/* bootstrap mixins */
+
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
+
+/* bootstrap mixins */
+
+.footer {
+    font-size: 12px;
+    color: white;
+    background: rgb(0, 143, 201);
+    .footer-left {
+        width: 300px;
+        height: 150px;
+        margin-bottom: 40px;
+    }
+}
+
+.footer-top {
+    position: relative;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    &:before {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border: 1px solid rgb(4, 122, 179);
+    }
+}
+
+.footer-social-icons {
+    padding: 15px 0;
+    letter-spacing: 5px;
+    a {
+        font-size: 22px;
+        text-decoration: none;
+    }
+}
+
+.footer-left {
+    .ty-form {
+        color: inherit;
+    }
+    .ty-input {
+        border: 1px solid rgb(64, 171, 213);
+        width: inherit;
+        height: 40px;
+        padding-left: 5px;
+        padding-right: 80px;
+        background: transparent;
+    }
+    .ty-icon {
+        color: white;
+        &.right {
+            width: 80px;
+            background-color: rgb(25, 124, 179);
+            border: 1px solid rgb(64, 171, 213);
+            &:before {
+                content: "SUBSCRIBE";
+            }
+        }
+    }
+    .ty-input-addon {
+        width: 100%
+    }
+    .promotion-txt {
+        font-size: 10px;
+    }
+    .left-bottom {
+        width: 100%;
+        padding: inherit;
+    }
+}
+
+.footer-links {
+    strong {
+        line-height: 30px;
+    }
+    a {
+        color: inherit;
+        display: block;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        &:nth-last-of-type(1) {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.footer-rights {
+    padding: 15px 15px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        .footer-left {
+            padding-right: 30px;
+        }
+    }
+    .footer-links {
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer {
+        .footer-left {
+            margin-bottom: 0;
+        }
+    }
+    .footer-links {
+        margin-bottom: 0;
+    }
+}

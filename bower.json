@@ -1,0 +1,24 @@
+{
+  "name": "ty-main",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap-sass-official": "https://github.com/jesselty/twitter-bootstrap.git",
+    "icomoon": "https://github.com/jesselty/ty-icomoon.git",
+    "jquery": "^2.2.3",
+    "pikaday": "https://github.com/jesselty/Pikaday.git#^1.4.1",
+    "lazy-image-url": "https://github.com/jesselty/lazy-image-url.git#^0.0.5",
+    "unslider": "https://github.com/jesselty/unslider.git#^2.0.7"
+  },
+  "devDependencies": {},
+  "appPath": "app",
+  "moduleName": "tyMainApp",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}

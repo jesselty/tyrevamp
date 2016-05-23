@@ -1,0 +1,61 @@
+/* Autocomplete Styles */
+
+.atc-all-results {
+    &:before {
+        content: "ALL CITIES";
+    }
+}
+
+.atc-popular-results {
+    &:before {
+        content: "POPULAR CITIES";
+    }
+}
+
+.atc-city-matched {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 224px;
+    overflow: auto;
+    background-color: white;
+    box-shadow: 0 0 1px #bdbdbd inset;
+    color: black;
+    z-index: 1;
+    >ul {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.atc-city-matched li:first-letter {
+    text-transform: uppercase;
+}
+
+.atc-city-matched li {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 7px 5px;
+    &.atc-all-results,
+    &.atc-popular-results {
+        padding-top: 39px;
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: #eeeeee;
+            color: black;
+            font-weight: bold;
+            padding: 7px 5px;
+        }
+    }
+}
+
+.atc-city-matched li.atc-search-highlighted {
+    background-color: #e24a00;
+    color: white;
+}
